@@ -1,2 +1,4 @@
 # Pw_bases
-Create web site from CNC conociments
+Creen la pagina de bases
+
+cualquier cosa avisan
