@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Torno</title>
+</head>
+
+<body>
+  <section class="pc">
+    <header class="head">
+
+      <div class="icon"></div>
+
+      <nav>
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="#">Inicio</a>
+          </li>
+          <li class="menu-item">
+            <a href="pages/#">Objetivos</a>
+          </li>
+          <li class="menu-item">
+            <a href="#">fresadora</a>
+            <ul class="submenu">
+              <li><a href="pages/#" class="submenu_d">Texto 1</a></li>
+              <li><a href="pages/#" class="submenu_d">Texto 2</a></li>
+              <li><a href="pages/#" class="submenu_d">Texto 3</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">Torno</a>
+            <ul class="submenu">
+              <li><a href="pages/#" class="submenu_d">Texto 1</a></li>
+              <li><a href="pages/#" class="submenu_d">Texto 2</a></li>
+              <li><a href="pages/#" class="submenu_d">Texto 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Modo oscuro/claro -->
+      <div class="night">
+        <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn">
+          <input type="checkbox" id="themeToggle" class="themeToggleInput"
+            aria-label="Alternar entre modo oscuro y claro" />
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
+            <mask id="moon-mask">
+              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+              <circle cx="11" cy="3" r="8" fill="black"></circle>
+            </mask>
+            <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
+            <g>
+              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+              <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
+              <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
+              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+              <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
+              <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
+            </g>
+          </svg>
+        </label>
+      </div>
+    </header>
+
+    <div class="codigosG"></div>
+    <div class="codigosG"></div>
+    <div class="parametros"></div>
+
+
+  </section>
+</body>
+
+</html>
