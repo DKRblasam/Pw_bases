@@ -58,7 +58,7 @@ body {
 
   /* Menus */
 
-  .menu {
+  .nav{
     list-style: none;
     margin: 0;
     padding: 0;
@@ -285,7 +285,7 @@ body {
   }
 
   /*menu_bajo tamaño*/
-  .menu {
+  .nav{
     list-style: none;
     margin-left: 20px;
     padding: 0;
@@ -469,7 +469,7 @@ body {
   }
 
   /*menu_bajo tamaño*/
-  .menu {
+  .nav{
     list-style: none;
     margin-left: 20px;
     padding: 0;
