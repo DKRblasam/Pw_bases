@@ -41,7 +41,7 @@ body {
     left: 10px;
     height: 250px;
     width: 250px;
-    background-image: url("/images/logo.png");
+    background-image: url("../images/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -675,7 +675,7 @@ body.dark-mode .submenu_d:after {
 }
 
 body.dark-mode .icon {
-  background-image: url("/images/light_icon.png");
+  background-image: url("../images/light-icon.png");
   position: absolute;
   top: -10px;
   left: 10px;
@@ -699,7 +699,7 @@ nav a {
 }
 
 body.dark-mode .icon {
-  background-image: url("/images/light-icon.png");
+  background-image: url("../images/light-icon.png");
 }
 
 body.dark-mode .themeToggle {
