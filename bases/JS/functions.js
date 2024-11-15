@@ -52,3 +52,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 });
+
+function showInfo(contentId, button) {
+  // Oculta todos los contenidos
+  const contents = document.querySelectorAll('.info-content');
+  contents.forEach(content => {
+    content.classList.remove('active');
+  });
+
+  // Muestra el contenido correspondiente al botón presionado
+  const selectedContent = document.getElementById(contentId);
+  if (selectedContent) {
+    selectedContent.classList.add('active');
+  }
+
+  // Resalta el botón activo
+  const buttons = document.querySelectorAll('.menu button');
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+  });
+  button.classList.add('active');
+}

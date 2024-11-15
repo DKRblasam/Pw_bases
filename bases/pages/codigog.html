@@ -7,21 +7,23 @@
   <title>Tabla Interactiva de Códigos G</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
+      font-family: Poppins, sans-serif;
+      background-color: rgb(48, 52, 63);
+      color: rgb(0, 0, 0);
     }
 
     .container {
+      margin-top: 3rem;
       display: flex;
-      border: 2px solid #333;
-      border-radius: 8px;
-      overflow: hidden;
       width: 80%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: rgb(51, 51, 51);
+      border-image: initial;
+      border-radius: 8px;
+
+      width: 100px;
+      overflow: hidden;
     }
 
     .menu {
@@ -47,19 +49,15 @@
       background-color: #555;
     }
 
-    /* Estilo del botón activo */
     .menu button.active {
       background-color: #fff;
-      /* Color de fondo de la caja de información */
       color: #333;
-      /* Color del texto cuando el botón es activo */
     }
-
-
-    
 
     .info-box {
       position: relative;
+      top: 100%;
+      left: auto;
       flex-grow: 1;
       padding: 20px;
       display: flex;
@@ -72,22 +70,24 @@
     }
 
     .info-content {
-      display: none;
-      text-align: center;
-      transition: opacity 0.3s;
-    }
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-    .info-content.active {
-      display: block;
-      opacity: 1;
-    }
+.info-content.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
 
     /* Línea de unión */
     .line {
       position: absolute;
+      margin-top: 1000px;
       left: -10px;
       width: 10px;
-      height: 100%;
       background-color: #333;
       transition: opacity 0.3s;
       opacity: 0;
@@ -238,7 +238,8 @@
         <button onclick="showInfo('g98', this)">Código G98</button>
         <button onclick="showInfo('g99', this)">Código G99</button>
 
-      </div <div class="info-box">
+      </div >
+      <div class="info-box">
       <div class="info-content" id="g00">
         <p><strong>Código G00:</strong> Posicionamiento (movimiento rápido).</p>
       </div>
@@ -368,22 +369,8 @@
       </div>
       <div class="line"></div>
     </div>
-    </div>
   </div>
-
-  <script>
-    function showInfo(id, button) {
-      document.querySelectorAll('.info-content').forEach(content => {
-        content.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('.menu button').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      button.classList.add('active');
-    }
-  </script>
+  </div>
 
 </body>
 
