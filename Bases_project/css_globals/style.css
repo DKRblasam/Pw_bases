@@ -43,7 +43,7 @@ body {
     left: 10px;
     height: 200px;  /* Ajusta la altura */
     width: 200px;   /* Ajusta el ancho */
-    background-image: url("../images/logo.webp");
+    background-image: url("../public/logo.webp");
   
     background-repeat: no-repeat;
     background-position: center;
@@ -678,7 +678,7 @@ body.dark-mode .submenu_d:after {
 }
 
 body.dark-mode .icon {
-  background-image: url("../images/light-icon.webp");
+  background-image: url("../public/light-icon.webp");
   position: absolute;
   top: -10px;
   left: 10px;
