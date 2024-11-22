@@ -30,11 +30,7 @@ export function Card ({title,descrip,format,img,notes})
             <strong>Notas:</strong><br/>
             {notes}
         </p>
-        
-        <div className="buttons">
-           
-            <button>Cerrar</button>
-        </div>
+    
     </div>
   )
 }
