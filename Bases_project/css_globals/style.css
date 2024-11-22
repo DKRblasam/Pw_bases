@@ -43,7 +43,7 @@ body {
     left: 10px;
     height: 200px;  /* Ajusta la altura */
     width: 200px;   /* Ajusta el ancho */
-    background-image: url("../images/logo.webp");
+    background-image: url("../public/logo.webp");
   
     background-repeat: no-repeat;
     background-position: center;
@@ -678,7 +678,7 @@ body.dark-mode .submenu_d:after {
 }
 
 body.dark-mode .icon {
-  background-image: url("../images/light-icon.webp");
+  background-image: url("../public/light-icon.webp");
   position: absolute;
   top: -10px;
   left: 10px;
@@ -806,4 +806,57 @@ body.dark-mode .themeToggle {
   100% {
     transform: scale(1);
   }
+}
+
+
+.fresadora-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(112, 173, 71, 0.1);
+  border-radius: 10px;
+}
+
+.fresadora-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.fresadora-imagen {
+  width: 300px;
+  height: 300px;
+  background-image: url('../images/fresadora.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.fresadora-info {
+  flex: 1;
+}
+
+.seccion-tecnica {
+  background-color: rgba(112, 173, 71, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tabla-especificaciones {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tabla-especificaciones th,
+.tabla-especificaciones td {
+  border: 1px solid rgba(242, 244, 243, 0.2);
+  padding: 10px;
+  text-align: left;
+}
+
+.tabla-especificaciones th {
+  background-color: rgba(112, 173, 71, 0.3);
 }
