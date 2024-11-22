@@ -2,7 +2,7 @@
 /* Valores globales */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #30343f;
+  background-color: #011c66;
   color: #f2f4f3;
   margin: 0;
   margin-top: 5px;
@@ -89,7 +89,7 @@ body {
   .menu-item:focus,
   .menu-item:hover {
     color: #f2f4f3;
-    background-color: #06267e75;
+    background-color: #fcff4c75;
     border-radius: 5px;
   }
 
