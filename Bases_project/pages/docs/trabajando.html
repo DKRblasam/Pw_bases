@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css_globals/style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../src/JS/scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>trabajando</title>
 </head>
+
 <body>
-  
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <div class="logo">
+                    <h1>En Construccion</h1>
+                </div>
+                <div class="menu-items">
+                    <ul class="nav">
+                        <li>
+                            <a href="../../index.html" data-text="Torno">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#">Videos</a>
+                        </li>
+                        <li>
+                            <a href="fresadora.html" data-text="Fresa">fresadora</a>
+                        </li>
+                        <li>
+                            <a href="torno.html" data-text="Torno">Torno</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="construction-container">
+        <div class="construction-icon">
+            🚧
+        </div>
+        <h1 class="construction-message">Página en Construcción</h1>
+
+        <div class="construction-details">
+            <p>Estamos trabajando arduamente para preparar esta sección.</p>
+            <p>Próximamente tendremos contenido disponible.</p>
+
+            <div class="countdown" id="countdown">
+                Próximamente...
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ol>
+                    <li>Email: info@tuempresa.com</li>
+                    <li>Teléfono: +54 123 456 7890</li>
+                    <li>Dirección: Calle Falsa 123, Ciudad</li>
+                </ol>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#" class="fab fa-facebook"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para contar el tiempo restante
+        function updateCountdown() {
+            const launchDate = new Date("2024-12-06"); // Fecha de lanzamiento
+            const now = new Date();
+            const difference = launchDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML =
+                `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        }
+
+        // Actualizar countdown cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Llamar inmediatamente para evitar retraso
+    </script>
+
 </body>
+
+
 </html>
