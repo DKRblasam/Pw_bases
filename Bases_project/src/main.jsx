@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Card } from "./App"; // Asegúrate de que el componente Card esté correctamente importado
+import {App} from "./cardmain";
 
 const content = ReactDOM.createRoot(document.getElementById("content"));
+
 
 const app1 = () => {
   const [cards1, setCards1] = useState(
