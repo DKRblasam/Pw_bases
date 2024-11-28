@@ -16,93 +16,45 @@
     }
 
     .container {
-      margin-top: 3rem;
       display: flex;
-      width: 80%;
-      border-width: 2px;
-      border-style: solid;
-      border-color: rgb(51, 51, 51);
-      border-image: initial;
-      border-radius: 8px;
-
-      width: 100px;
-      overflow: hidden;
+      gap: 20px;
     }
-
-    .menu {
-      background-color: #333;
-      color: white;
-      width: 120px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .menu button {
-      background: none;
-      border: none;
-      color: inherit;
-      padding: 15px;
+    .card {
+      width: 300px;
+      height: 350px;
+      perspective: 1000px;
       cursor: pointer;
-      text-align: left;
-      width: 100%;
-      transition: background 0.3s;
     }
-
-    .menu button:hover {
-      background-color: #555;
-    }
-
-    .menu button.active {
-      background-color: #fff;
-      color: #333;
-    }
-
-    .info-box {
+    .card-inner {
       position: relative;
-      top: 100%;
-      left: auto;
-      flex-grow: 1;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      color: #333;
-      overflow: hidden;
-      min-height: 90px;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
-
-    .info-content {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.info-content.active {
-  opacity: 1;
-  visibility: visible;
-  position: relative;
-}
-
-    /* Línea de unión */
-    .line {
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-face {
       position: absolute;
-      margin-top: 1000px;
-      left: -10px;
-      width: 10px;
-      background-color: #333;
-      transition: opacity 0.3s;
-      opacity: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-
-    .info-content.active~.line {
-      opacity: 1;
+    .card-front {
+      background-color: #007bff;
+      color: white;
     }
-
-    #content {
-      width: max-content;
-      margin: 0 auto;
+    .card-back {
+      background-color: #28a745;
+      color: white;
+      transform: rotateY(180deg);
     }
   </style>
   <link rel="stylesheet" href="../../css_globals/style.css">
@@ -164,10 +116,46 @@
       </label>
     </div>
   </header>
-
-  <div id="videos">
-    <script type="module" src="../../src/cardmain.jsx"></script>
+  <div class="container">
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          G00 Y G01
+          En este video se explican los siguientes temas: torno CNC, códigos G y M como la explicación de los más básicos que se utilizan para el mecanizado de piezas, al final del video se realiza una práctica donde se observa su funcionamiento.
+        </div>
+        <div class="card-face card-back">Info 1</div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-face card-front">Card 2</div>
+        <div class="card-face card-back">Info 2</div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-face card-front">Card 3</div>
+        <div class="card-face card-back">Info 3</div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-face card-front">Card 4</div>
+        <div class="card-face card-back">Info 4</div>
+      </div>
+    </div>
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+        <div class="card-face card-front">Card 5</div>
+        <div class="card-face card-back">Info 5</div>
+      </div>
+    </div>
   </div>
-</body>
 
+  <script>
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
+  </script>
+</body>
 </html>
