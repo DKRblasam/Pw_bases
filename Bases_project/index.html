@@ -7,147 +7,84 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
     rel="stylesheet" />
-
-  <!-- Ruta relativa al archivo CSS -->
   <link rel="stylesheet" href="css_globals/style.css" />
-  <script src="src/JS/scripts.js"></script>
-
-  <!-- Ruta relativa al archivo JS -->
   <title>WIKIG</title>
 </head>
 
 <body>
-  <section class="pc">
-    <!-- Encabezado -->
-    <header class="head">
-
-      <div class="icon"><img src="public/logo.webp"></div>
-
-      <nav>
-        <ul class="nav">
-          <li class="menu-item">
-            <a href="#">Inicio</a>
-          </li>
-
-          <li class="menu-item">
-            <a href="pages/docs/fresadora.html">fresadora</a>
-            <ul class="submenu">
-              <li><a href="pages/docs/codigog.html" class="submenu_d">Codigos G</a></li>
-              <li><a href="pages/docs/codigosm.html" class="submenu_d">Codigos M</a></li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <a href="pages/docs/torno.html">Torno</a>
-            <ul class="submenu">
-              <li><a href="./pages/docs/codigog.html" class="submenu_d">Codigos G</a></li>
-              <li><a href="./pages/docs/codigosm.html" class="submenu_d">Codigos M</a></li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <a href="pages/docs/videos.html">Videos</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Modo oscuro/claro -->
-      <div class="night">
-        <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn">
-          <input type="checkbox" id="themeToggle" class="themeToggleInput"
-            aria-label="Alternar entre modo oscuro y claro" />
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
-            <mask id="moon-mask">
-              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-              <circle cx="11" cy="3" r="8" fill="black"></circle>
-            </mask>
-            <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
-            <g>
-              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
-              <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
-              <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
-              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-              <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
-              <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
-            </g>
-          </svg>
-        </label>
-      </div>
-    </header>
-
-    <!-- Contenido -->
-    <div class="content">
-      <h1 align="center">Introduccion</h1>
-      <p>A través de esta página web, nuestro objetivo es ofrecerte una introducción clara y accesible al fascinante
-        mundo de las fresadoras y tornos CNC. Sabemos que este tipo de tecnología puede parecer compleja al principio,
-        pero nuestra misión es hacerlo sencillo y comprensible para todos. Para lograrlo, hemos diseñado un curso que te
-        guiará paso a paso mediante ejemplos prácticos y fáciles de entender, que te permitirán aprender de forma activa
-        y efectiva.
-        <br><br><br>
-        Este curso está diseñado para que puedas avanzar a tu propio ritmo, con la posibilidad de revisar los materiales
-        tantas veces como lo necesites. Ya seas un principiante en el campo o tengas algunos conocimientos previos,
-        estamos aquí para ayudarte a dominar las habilidades esenciales de la programación CNC y el mecanizado de
-        precisión.
-      </p>
-      <br>
-      <h1 align="center">Entonces, Que vas a elegir?</h1>
+  <header class="header">
+    <div class="logo">
+      <img src="public/light-icon.webp" alt="Logo">
     </div>
-    <br><br>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="">Inicio</a></li>
+        <li class="dropdown">
+          <a href="./pages/docs/fresadora.html">Fresadora</a>
+          <ul class="dropdown-menu">
+            <li><a href="pages/docs/codigog.html">Códigos G</a></li>
+            <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="./pages/docs/torno.html">Torno</a>
+          <ul class="dropdown-menu">
+            <li><a href="pages/docs/codigog.html">Códigos G</a></li>
+            <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
+          </ul>
+        </li>
+        <li><a href="pages/docs/videos.html">Videos</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>  
 
-    <div class="options">
-      <div class="op">
-        <a href="pages/docs/fresadora.html" class="img-op"><img src="./public/fresa.webp" alt=""></a>
-
-        <a href="pages/docs/fresadora.html" class="text-op">Fresadora</a>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Explora el Mundo CNC</h1>
+        <p>
+          Aprende sobre fresadoras y tornos CNC con un enfoque interactivo, 
+          animado y pensado para ti.
+        </p>
+        <a href="#options" class="btn-primary">Comenzar</a>
       </div>
-      <div class="op">
-        <a href="pages/docs/torno.html" class="img-op"><img src="./public/torno.webp" alt=""></a>
-        <a href="pages/docs/torno.html" class="text-op">Torno</a>
+    </section>
+
+    <section id="options" class="options">
+      <div class="container">
+        <h2>¿Qué vas a elegir?</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-img">
+              <img src="public/fresa.webp" alt="Fresadora" />
+            </div>
+            <h3>Fresadora</h3>
+            <a href="pages/docs/fresadora.html" class="btn-secondary">Explorar</a>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="public/torno.webp" alt="Torno" />
+            </div>
+            <h3>Torno</h3>
+            <a href="pages/docs/torno.html" class="btn-secondary">Explorar</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 WIKIG. Todos los derechos reservados.</p>
     </div>
-  </section>
-
-  <section class="tablet">
-    <div class="dropdown">
-      <span> <img src="imagenes/menu-l.webp" alt="Menu" id="span_p"></span>
-      <div class="dropdown-content">
-        <a href="paginas/objetivos.html" class="dropdown-item">Objetivos</a>
-        <a href="paginas/sio.html" class="dropdown-item">Salvaguarda información de obras</a>
-        <a href="paginas/ap.html" class="dropdown-item">Ahorro programas</a>
-        <a href="paginas/ht.html" class="dropdown-item">Herramientas transparencia</a>
-        <a href="paginas/ceg.html" class="dropdown-item">Contribuciones a economia general</a>
-        <a href="paginas/introduccion.html" class="dropdown-item">Introduccion</a>
-        <a href="paginas/informes.html" class="dropdown-item">Informes</a>
-        <a href="paginas/avances.html" class="dropdown-item">Avances</a>
-        <a href="paginas/oportunidades.html" class="dropdown-item">Oportunidades</a>
-        <a href="paginas/cc.html" class="dropdown-item">Cortes caja</a>
-        <a href="paginas/estadisticas.html" class="dropdown-item">Estadísticas</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="phone">
-    <div class="dropdown">
-      <span> <img src="imagenes/menu-l.webp" alt="Menu" id="span_p"></span>
-      <div class="dropdown-content">
-        <a href="paginas/objetivos.html" class="dropdown-item">Objetivos</a>
-        <a href="paginas/sio.html" class="dropdown-item">Salvaguarda información de obras</a>
-        <a href="paginas/ap.html" class="dropdown-item">Ahorro programas</a>
-        <a href="paginas/ht.html" class="dropdown-item">Herramientas transparencia</a>
-        <a href="paginas/ceg.html" class="dropdown-item">Contribuciones a economia general</a>
-        <a href="paginas/introduccion.html" class="dropdown-item">Introduccion</a>
-        <a href="paginas/informes.html" class="dropdown-item">Informes</a>
-        <a href="paginas/avances.html" class="dropdown-item">Avances</a>
-        <a href="paginas/oportunidades.html" class="dropdown-item">Oportunidades</a>
-        <a href="paginas/cc.html" class="dropdown-item">Cortes caja</a>
-        <a href="paginas/estadisticas.html" class="dropdown-item">Estadísticas</a>
-      </div>
-    </div>
-  </section>
-
+  </footer>
 </body>
 
 </html>
