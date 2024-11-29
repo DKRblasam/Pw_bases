@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="css_globals/style.css" />
-  <title>Acordeones Interactivos</title>
+  <title>Acordeones con Diseño de Ventana</title>
   <style>
     body {
-      font-family: Poppins, sans-serif;
-      background-color: rgb(48, 52, 63);
-      color: white;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
     .accordion {
-      width: 80%;
-      margin: 20px auto;
-      border: 1px solid #555;
-      border-radius: 8px;
-      overflow: hidden;
+      width: 600px;
     }
 
     .accordion-item {
-      border-bottom: 1px solid #555;
-    }
-
-    .accordion-item:last-child {
-      border-bottom: none;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .accordion-header {
-      background-color: #333;
-      color: white;
-      padding: 15px;
+      position: relative;
+      background-color: #e4e4e4;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
       cursor: pointer;
+      padding: 10px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      transition: background-color 0.3s;
+      justify-content: space-between;
     }
 
-    .accordion-header:hover {
-      background-color: #555;
+    .accordion-header .buttons {
+      display: flex;
+      gap: 8px;
+      margin-left: 10px;
+    }
+
+    .accordion-header .buttons .button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .button-red {
+      background-color: #ff605c;
+    }
+
+    .button-yellow {
+      background-color: #ffbd44;
+    }
+
+    .button-green {
+      background-color: #00ca4e;
     }
 
     .accordion-header h2 {
       margin: 0;
-      font-size: 1.2em;
+      font-size: 16px;
     }
 
-    .accordion-header .icon {
-      font-size: 1.5em;
-      transition: transform 0.3s;
+    .accordion-header:hover {
+      background-color: #d6d6d6;
     }
 
     .accordion-content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-      background-color: white;
-      color: #333;
       padding: 0 15px;
     }
 
@@ -75,275 +85,330 @@
       margin: 15px 0;
     }
 
-    .accordion-item.active .accordion-header .icon {
-      transform: rotate(90deg);
+    .accordion-item.active .accordion-content {
+      max-height: 200px;
+      padding: 15px;
     }
 
-    .accordion-item.active .accordion-content {
-      max-height: 300px;
-      padding: 15px;
+    .accordion-item.active .accordion-header {
+      background-color: #d6d6d6;
+    }
+
+    .icon {
+      font-size: 1.5em;
+      transition: transform 0.3s;
+    }
+
+    .accordion-item.active .icon {
+      transform: rotate(90deg);
     }
   </style>
 </head>
-
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="public/light-icon.webp" alt="Logo">
-    </div>
-    <nav class="navbar">
-      <ul class="nav-list">
-        <li><a href="">Inicio</a></li>
-        <li class="dropdown">
-          <a href="./pages/docs/fresadora.html">Fresadora</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/docs/codigog.html">Códigos G</a></li>
-            <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="./pages/docs/torno.html">Torno</a>
-          <ul class="dropdown-menu">
-            <li><a href="pages/docs/codigog.html">Códigos G</a></li>
-            <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
-          </ul>
-        </li>
-        <li><a href="pages/docs/videos.html">Videos</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>  
-
   <div class="accordion">
+    <!-- Código M00 -->
     <div class="accordion-item">
       <div class="accordion-header">
+        <div class="buttons">
+          <div class="button button-red"></div>
+          <div class="button button-yellow"></div>
+          <div class="button button-green"></div>
+        </div>
         <h2>M00</h2>
         <span class="icon">▶</span>
       </div>
       <div class="accordion-content">
-        <p><strong>M00:</strong></p>
-        <p>Cuando el CNC lee en un bloque el código M00 interrumpe el programa. Para reanudar el mismo hay que dar nuevamente la orden de MARCHA.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M00</p>
+        <p><strong>M00:</strong> Cuando el CNC lee este código, interrumpe el programa. Para reanudar, se debe dar la orden de marcha nuevamente.</p>
+        <p><strong>Formato:</strong> M00</p>
       </div>
     </div>
-    
+
+    <!-- Código M01 -->
     <div class="accordion-item">
       <div class="accordion-header">
+        <div class="buttons">
+          <div class="button button-red"></div>
+          <div class="button button-yellow"></div>
+          <div class="button button-green"></div>
+        </div>
         <h2>M01</h2>
         <span class="icon">▶</span>
       </div>
       <div class="accordion-content">
-        <p><strong>M01:</strong></p>
-        <p>Selección de parada opcional: Pausa opcional que se activa si está habilitada.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M01</p>
+        <p><strong>M01:</strong> Selección de parada opcional. La ejecución depende de que la función de parada opcional esté habilitada.</p>
+        <p><strong>Formato:</strong> M01</p>
       </div>
     </div>
-    
+
+    <!-- Código M02 -->
     <div class="accordion-item">
       <div class="accordion-header">
+        <div class="buttons">
+          <div class="button button-red"></div>
+          <div class="button button-yellow"></div>
+          <div class="button button-green"></div>
+        </div>
         <h2>M02</h2>
         <span class="icon">▶</span>
       </div>
       <div class="accordion-content">
-        <p><strong>M02:</strong></p>
-        <p>Este código indica el fin del programa y realiza una función de "Reset General" del CNC (puesta en condiciones iniciales).</p>
-        <p>También ejerce la función del M05.</p>
-        <p>Al igual que en el caso de M00, se recomienda personalizarlo para que se ejecute al final del bloque en el que esté programado.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M02</p>
+        <p><strong>M02:</strong> Indica el final del programa. Se puede usar para detener la máquina después de completar un ciclo.</p>
+        <p><strong>Formato:</strong> M02</p>
       </div>
     </div>
-    
+
+    <!-- Código M03 -->
     <div class="accordion-item">
       <div class="accordion-header">
+        <div class="buttons">
+          <div class="button button-red"></div>
+          <div class="button button-yellow"></div>
+          <div class="button button-green"></div>
+        </div>
         <h2>M03</h2>
         <span class="icon">▶</span>
       </div>
       <div class="accordion-content">
-        <p><strong>M03:</strong></p>
-        <p>Giro del husillo hacia adelante (CW): Inicia la rotación del husillo en el sentido horario.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M03</p>
+        <p><strong>M03:</strong> Activa la rotación del husillo en el sentido horario.</p>
+        <p><strong>Formato:</strong> M03 S[velocidad]</p>
       </div>
     </div>
-    
+
+    <!-- Código M04 -->
     <div class="accordion-item">
       <div class="accordion-header">
+        <div class="buttons">
+          <div class="button button-red"></div>
+          <div class="button button-yellow"></div>
+          <div class="button button-green"></div>
+        </div>
         <h2>M04</h2>
         <span class="icon">▶</span>
       </div>
       <div class="accordion-content">
-        <p><strong>M04:</strong></p>
-        <p>Giro del husillo hacia atrás (CCW): Inicia la rotación del husillo en sentido antihorario.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M04</p>
+        <p><strong>M04:</strong> Activa la rotación del husillo en el sentido antihorario.</p>
+        <p><strong>Formato:</strong> M04 S[velocidad]</p>
       </div>
     </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M05</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M05:</strong></p>
-        <p>Parada del husillo: Detiene la rotación del husillo.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M05</p>
-      </div>
+
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
     </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M06</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M06:</strong></p>
-        <p>Cambio de herramienta: Comando para cambiar la herramienta del husillo.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M06</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M08</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M08:</strong></p>
-        <p>Encendido del refrigerante: Activa el sistema de refrigerante para el corte.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M08</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M09</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M09:</strong></p>
-        <p>Apagado del refrigerante: Desactiva el sistema de refrigerante.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M09</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M30</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M30:</strong></p>
-        <p>Fin de programa y regreso al inicio: Finaliza el programa y reinicia desde el principio.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M30</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M48</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M48:</strong></p>
-        <p>Cancelar límite de sobrecarga del husillo: Permite la operación a pesar de la sobrecarga detectada.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M48</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M49</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M49:</strong></p>
-        <p>Activar límite de sobrecarga del husillo: Restablece los límites de sobrecarga del husillo.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M49</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M94</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M94:</strong></p>
-        <p>Cancelar imagen especular: Desactiva el modo de imagen especular.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M94</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M95</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M95:</strong></p>
-        <p>Imagen especular en el eje X: Activa el reflejo especular de los movimientos en el eje X.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M95</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M96</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M96:</strong></p>
-        <p>Imagen especular en el eje Y: Activa el reflejo especular de los movimientos en el eje Y.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M96</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M98</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M98:</strong></p>
-        <p>Llamada a subrutina: Ejecuta una subrutina específica.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M98</p>
-      </div>
-    </div>
-    
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <h2>M99</h2>
-        <span class="icon">▶</span>
-      </div>
-      <div class="accordion-content">
-        <p><strong>M99:</strong></p>
-        <p>Fin de subrutina: Termina la subrutina y regresa al punto de llamada.</p>
-        <p><strong>Formato:</strong></p>
-        <p>M99</p>
-      </div>
-    </div>
-    
+    <h2>M05</h2>
+    <span class="icon">▶</span>
   </div>
-  
+  <div class="accordion-content">
+    <p><strong>M05:</strong></p>
+    <p>Parada del husillo: Detiene la rotación del husillo.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M05</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M06</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M06:</strong></p>
+    <p>Cambio de herramienta: Comando para cambiar la herramienta del husillo.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M06</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M08</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M08:</strong></p>
+    <p>Encendido del refrigerante: Activa el sistema de refrigerante para el corte.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M08</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M09</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M09:</strong></p>
+    <p>Apagado del refrigerante: Desactiva el sistema de refrigerante.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M09</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M30</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M30:</strong></p>
+    <p>Fin de programa y regreso al inicio: Finaliza el programa y reinicia desde el principio.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M30</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M48</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M48:</strong></p>
+    <p>Cancelar límite de sobrecarga del husillo: Permite la operación a pesar de la sobrecarga detectada.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M48</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M49</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M49:</strong></p>
+    <p>Activar límite de sobrecarga del husillo: Restablece los límites de sobrecarga del husillo.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M49</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M94</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M94:</strong></p>
+    <p>Cancelar imagen especular: Desactiva el modo de imagen especular.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M94</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M95</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M95:</strong></p>
+    <p>Imagen especular en el eje X: Activa el reflejo especular de los movimientos en el eje X.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M95</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M96</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M96:</strong></p>
+    <p>Imagen especular en el eje Y: Activa el reflejo especular de los movimientos en el eje Y.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M96</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M98</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M98:</strong></p>
+    <p>Llamada a subrutina: Ejecuta una subrutina específica.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M98</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <div class="accordion-header">
+    <div class="buttons">
+      <div class="button button-red"></div>
+      <div class="button button-yellow"></div>
+      <div class="button button-green"></div>
+    </div>
+    <h2>M99</h2>
+    <span class="icon">▶</span>
+  </div>
+  <div class="accordion-content">
+    <p><strong>M99:</strong></p>
+    <p>Fin de subrutina: Termina la subrutina y regresa al punto de llamada.</p>
+    <p><strong>Formato:</strong></p>
+    <p>M99</p>
+  </div>
+</div>
+
+  </div>
 
   <script>
     const accordionItems = document.querySelectorAll('.accordion-item');
@@ -353,9 +418,7 @@
 
       header.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-
         accordionItems.forEach(i => i.classList.remove('active'));
-
         if (!isActive) {
           item.classList.add('active');
         }
@@ -363,5 +426,4 @@
     });
   </script>
 </body>
-
 </html>
