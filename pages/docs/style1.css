@@ -63,6 +63,9 @@ body{
 
 .red {
   background-color: #ff605c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .yellow {
