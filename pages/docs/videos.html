@@ -6,25 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Videos</title>
 
-  <script src="../../src/JS/scripts.js"></script>
- 
   <style>
-    body {
-      font-family: Poppins, sans-serif;
-      background-color: rgb(48, 52, 63);
-      color: rgb(0, 0, 0);
+  body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f6f9;
+      color: #333;
+      line-height: 1.6;
     }
 
-    .container {
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+      height: 70px;
+    }
+
+    .navbar {
       display: flex;
       gap: 20px;
     }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-list a:hover {
+      background-color: #2980b9;
+    }
+
+    h3 {
+      font-size: 30px;
+      color: #2c3e50;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .section {
+      margin: 40px 0;
+      padding: 20px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+
     .card {
-      width: 300px;
-      height: 350px;
+      width: 100%;
+      max-width: 320px;
+      height: 400px;
       perspective: 1000px;
       cursor: pointer;
+      margin: 0 auto;
     }
+
     .card-inner {
       position: relative;
       width: 100%;
@@ -33,132 +91,246 @@
       transition: transform 0.6s;
       transform-style: preserve-3d;
     }
+
     .card.flipped .card-inner {
       transform: rotateY(180deg);
     }
+
     .card-face {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
     }
+
     .card-front {
       background-color: #007bff;
       color: white;
     }
+
+    .card-front h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card-front p {
+      font-size: 16px;
+    }
+
     .card-back {
       background-color: #28a745;
       color: white;
       transform: rotateY(180deg);
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .card-back iframe {
+      margin: 10px auto;
+      border-radius: 8px;
+      width: 100%;
+      height: 180px;
+    }
+
+    .material-link {
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .material-link a {
+      color: white;
+      font-size: 16px;
+      text-decoration: underline;
+      transition: color 0.3s;
+    }
+
+    .material-link a:hover {
+      color: #d4f1d4;
     }
   </style>
-  
 </head>
 
 <body>
-
-  <header class="head">
-
-    <div class="icon"><img src="../../public/logo.webp"></div>
-
-    <nav>
-      <ul class="nav">
-        <li class="menu-item">
-          <a href="../../index.html">Inicio</a>
-        </li>
-        <li class="menu-item">
-          <a href="fresadora.html">fresadora</a>
-          <ul class="submenu">
-            <li><a href="codigog.html" class="submenu_d">Codigos G</a></li>
-            <li><a href="codigosm.html" class="submenu_d">Codigos M</a></li>
-          
-          </ul>
-        </li>
-        <li class="menu-item">
-          <a href="torno.html">Torno</a>
-          <ul class="submenu">
-            <li><a href="trabajando.html" class="submenu_d">Codigos G</a></li>
-            <li><a href="trabajando.html" class="submenu_d">Codigos M</a></li>
-           
-          </ul>
-        </li>
-        <li class="menu-item">
-          <a href="#">Videos</a>
-        </li>
+  <header class="header">
+    <div class="logo">
+      <img src="../../public/light-icon.webp" alt="Logo">
+    </div>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="#">Fresadora</a></li>
+        <li><a href="#">Torno</a></li>
+        <li><a href="#">Videos</a></li>
       </ul>
     </nav>
-
-    <!-- Modo oscuro/claro -->
-    <div class="night">
-      <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn">
-        <input type="checkbox" id="themeToggle" class="themeToggleInput"
-          aria-label="Alternar entre modo oscuro y claro" />
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
-          <mask id="moon-mask">
-            <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-            <circle cx="11" cy="3" r="8" fill="black"></circle>
-          </mask>
-          <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
-          <g>
-            <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
-            <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
-            <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
-            <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-            <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
-            <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
-          </g>
-        </svg>
-      </label>
-    </div>
   </header>
-  <div class="container">
-    <h3>Fresadora</h3>
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-face card-front">
-          G00 Y G01
-          En este video se explican los siguientes temas: torno CNC, códigos G y M 
-          como la explicación de los más básicos que se utilizan para el mecanizado de piezas, 
-          al final del video se realiza una práctica donde se observa su funcionamiento.
-        </div>
-        <div class="card-face card-back">
-          <iframe width="280" height="157" src="https://www.youtube.com/embed/_pgIK8bQPyI?si=2Tfjz5mdDatC89QT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-face card-front">Card 2</div>
-        <div class="card-face card-back">Info 2</div>
-      </div>
-    </div>
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-face card-front">Card 3</div>
-        <div class="card-face card-back">Info 3</div>
-      </div>
-    </div>
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-face card-front">Card 4</div>
-        <div class="card-face card-back">Info 4</div>
-      </div>
-    </div>
-    <div class="card" onclick="flipCard(this)">
-      <div class="card-inner">
-        <div class="card-face card-front">Card 5</div>
-        <div class="card-face card-back">Info 5</div>
-      </div>
-    </div>
-  </div>
 
-  <h3>Torno</h3>
-  
+
+  <section class="section">
+    <h3>Torno</h3>
+    <div class="cards-container">
+ 
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>G00 Y G01</h4>
+            <p>En este video se explican los siguientes temas: torno CNC, códigos G y M como la explicación de los más básicos que se utilizan para el mecanizado de piezas, al final del video se realiza 
+              una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/_pgIK8bQPyI" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1y9MzAZK12qCDH-tK4DOAOOdFgIO0lzMy?usp=drive_link">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>G02 Y G03</h4>
+            <p>En este video se explican los siguientes códigos G: G02 y G03, son cortes circulares y al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/NE09ZeSt4o0?si=vE6cun5rHPlpjI_d" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1INHYeE6iqx87VoDPrUye-TSM8Jkzy2KZ?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>DESBASTE VERTICAL</h4>
+            <p>En este video se explica otra manera de desbastar la pieza en este caso con cortes verticales y al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/DkMbGjsfCTw?si=GDxF1VCknJzP76Zl" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/18m6XUU6nP8beCaxnt9q1liMtSEePdw1I?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>G71 Y G70</h4>
+            <p>En este video se explican los siguientes códigos G: G71 y G70, son ciclos de desbaste y acabado, al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/ht8vesmU_mY?si=9beLNvYuOtHAHk6J" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1LYDZ0FhCwqnLJlAQo7KCZZblTb1brnoG?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>PRACTICA DE SOLIDWORKS, "POSTPROCESAR"</h4>
+            <p>En este video se explica  como realizar una pieza en solidworks como a su vez la manera en la que se puede obtener el código G para después ser utilizado en un simulador CNC.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/qn6XDXtrLJY?si=pCZ0_HCHNFrUZPs3" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1hrIfsJWbizFevJLUXJRj_XTzk1TxwjSR?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <h3>Fresadora</h3>
+    <div class="cards-container">
+    
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>Ciclos de cajonera rectangular y circular</h4>
+            <p>En este video se explican los siguientes temas: Fresa CNC, Ciclos de cajoneras rectangulares y circulares en fresa, al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/jtoYrjLhqXQ?si=LxtfrjWP8iATQFyB" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/10u1uWJK_GhocYNzVORvS7ABK8FbU4ezC?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>Cortes circulares</h4>
+            <p>En este video se explican los siguientes temas: Fresa CNC, El uso de cortes circulares, al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/_TNkoveDBBg?si=qGipK1Xg85Fci-1T" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1YzQCaNi2zhMRG_Il2T01dV7fRdvqakjr?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>Compensaciones en fresa</h4>
+            <p>En este video se explican los siguientes temas: Fresa CNC, en este video aprenderemos sobre el uso de compensaciones en fresa al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/p-oofvMmUz0?si=YXwDkCope1gQiuiP" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1eJ3xon3RrvbqHZI-ILgXhyeCd8d85UlN?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+    </div>
+  </section>
+
+
+  <section class="section">
+    <h3>Descargar WinUnisoft</h3>
+    <div class="cards-container">
+      <!-- Primera carta -->
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>WinUnisoft para Windows</h4>
+            <p>Descarga la versión compatible de WinUnisoft con sistemas operativos Windows.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/k0MdgRtA3kE?si=4L2l1-HB4niYam1J" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1JJnuNya-Y5n4C7TgblAUm1EZ3fTwC0iU?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
     function flipCard(card) {
@@ -166,4 +338,5 @@
     }
   </script>
 </body>
+
 </html>
