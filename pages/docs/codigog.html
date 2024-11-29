@@ -1,173 +1,1789 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla Interactiva de Códigos G</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabla Interactiva de Códigos G</title>
+    <script src="../../src/JS/scripts.js"></script>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
 
-  <script src="../../src/JS/scripts.js"></script>
- 
-  <style>
-    body {
-      font-family: Poppins, sans-serif;
-      background-color: rgb(48, 52, 63);
-      color: rgb(0, 0, 0);
-    }
-
-    .container {
-      margin-top: 3rem;
-      display: flex;
-      width: 80%;
-      border-width: 2px;
-      border-style: solid;
-      border-color: rgb(51, 51, 51);
-      border-image: initial;
-      border-radius: 8px;
-
-      width: 100px;
-      overflow: hidden;
-    }
-
-    .menu {
-      background-color: #333;
-      color: white;
-      width: 120px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .menu button {
-      background: none;
-      border: none;
-      color: inherit;
-      padding: 15px;
-      cursor: pointer;
-      text-align: left;
-      width: 100%;
-      transition: background 0.3s;
-    }
-
-    .menu button:hover {
-      background-color: #555;
-    }
-
-    .menu button.active {
-      background-color: #fff;
-      color: #333;
-    }
-
-    .info-box {
-      position: relative;
-      top: 100%;
-      left: auto;
-      flex-grow: 1;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      color: #333;
-      overflow: hidden;
-      min-height: 90px;
-    }
-
-    .info-content {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.info-content.active {
-  opacity: 1;
-  visibility: visible;
-  position: relative;
-}
-
-    /* Línea de unión */
-    .line {
-      position: absolute;
-      margin-top: 1000px;
-      left: -10px;
-      width: 10px;
-      background-color: #333;
-      transition: opacity 0.3s;
-      opacity: 0;
-    }
-
-    .info-content.active~.line {
-      opacity: 1;
-    }
-
-    #content {
-      width: max-content;
-      margin: 0 auto;
-    }
-  </style>
-  <link rel="stylesheet" href="../../css_globals/style.css">
-</head>
-
-<body>
-
-  <header class="head">
-
-    <div class="icon"><img src="../../public/logo.webp"></div>
-
-    <nav>
-      <ul class="nav">
-        <li class="menu-item">
-          <a href="../../index.html">Inicio</a>
-        </li>
-        <li class="menu-item">
-          <a href="fresadora.html">fresadora</a>
-          <ul class="submenu">
-            <li><a href="codigog.html" class="submenu_d">Codigos G</a></li>
-            <li><a href="codigosm.html" class="submenu_d">Codigos M</a></li>
-          
+  <body>
+    <section class="pc">
+      <header class="header">
+        <div class="logo">
+          <img src="../../public/light-icon.webp" alt="Logo" />
+        </div>
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li class="dropdown">
+              <a href="">Fresadora</a>
+              <ul class="dropdown-menu">
+                <li><a href="/pages/docs/codigog.html">Códigos G</a></li>
+                <li><a href="/pages/docs/codigosm.html">Códigos M</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/pages/docs/torno.html">Torno</a>
+              <ul class="dropdown-menu">
+                <li><a href="/pages/docs/codigog.html">Códigos G</a></li>
+                <li><a href="/pages/docs/codigosm.html">Códigos M</a></li>
+              </ul>
+            </li>
+            <li><a href="/pages/docs/videos.html">Videos</a></li>
           </ul>
-        </li>
-        <li class="menu-item">
-          <a href="torno.html">Torno</a>
-          <ul class="submenu">
-            <li><a href="trabajando.html" class="submenu_d">Codigos G</a></li>
-            <li><a href="trabajando.html" class="submenu_d">Codigos M</a></li>
-           
-          </ul>
-        </li>
-        <li class="menu-item">
-          <a href="trabajando.html">Videos</a>
-        </li>
-      </ul>
-    </nav>
+        </nav>
+      </header>
 
-    <!-- Modo oscuro/claro -->
-    <div class="night">
-      <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn">
-        <input type="checkbox" id="themeToggle" class="themeToggleInput"
-          aria-label="Alternar entre modo oscuro y claro" />
-        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
-          <mask id="moon-mask">
-            <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-            <circle cx="11" cy="3" r="8" fill="black"></circle>
-          </mask>
-          <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
-          <g>
-            <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
-            <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
-            <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
-            <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-            <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
-            <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
-          </g>
-        </svg>
-      </label>
-    </div>
-  </header>
+      <main class="content">
+        <h2>Lista de Códigos G y M</h2>
 
-  <div id="content">
-    
-  </div>
-</body>
+        <h3>Torno y fresa FANUC Código G</h3>
 
+        <div class="fanuc-complement">
+          <!-- Código G00 -->
+          <button class="ui-btn" id="btn-1">
+            <span> G00 </span>
+          </button>
+
+          <div class="card" id="1" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G00.webp"
+                  alt="Imagen del codigo G00"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G00 X## Y## Z## (Posicionamiento rápido en los ejes)</code
+                >
+              </p>
+              <p>
+                Posicionamiento rápido: Mueve el cortador rápidamente a la
+                posición deseada sin cortar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G01 -->
+          <button class="ui-btn" id="btn-2">
+            <span> G01 </span>
+          </button>
+
+          <div class="card" id="2" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G01.png"
+                  alt="Imagen del codigo G01"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G01 X## Y## Z## F## (Movimiento lineal con avance
+                  especificado)</code
+                >
+              </p>
+              <p>
+                Corte lineal: Movimiento lineal con avance de corte
+                especificado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G02 -->
+          <button class="ui-btn" id="btn-3">
+            <span> G02 </span>
+          </button>
+
+          <div class="card" id="3" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G02.png"
+                  alt="Imagen del codigo G02"
+                />
+              </div>
+              <p>
+                Arco circular en sentido horario: Movimiento circular en el
+                sentido de las agujas del reloj.
+              </p>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G02 X## Y## Z## I## J## F## (Arco circular en sentido
+                  horario)</code
+                >
+              </p>
+              <h3>Notas:</h3>
+              <p>
+                <code>
+                  X: cota x <br />
+                  Y: cota y <br />
+                  Z: cota z <br />
+                  I: Distancia punto de inicio arco del centro I <br />
+                  J: Distancia punto de inicio arco del centro J <br />
+                  K: Distancia punto de inicio arco del centro K <br />
+                </code>
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G03 -->
+          <button class="ui-btn" id="btn-4">
+            <span> G03 </span>
+          </button>
+
+          <div class="card" id="4" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G02.png"
+                  alt="Imagen del codigo G03"
+                />
+              </div>
+              <p>
+                Arco circular en sentido antihorario: Movimiento circular en
+                sentido antihorario.
+              </p>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G03 X## Y## Z## I## J## F## (Arco circular en sentido
+                  antihorario)</code
+                >
+              </p>
+              <h3>Notas:</h3>
+              <p>
+                <code>
+                  X: cota x <br />
+                  Y: cota y <br />
+                  Z: cota z <br />
+                  I: Distancia punto de inicio arco del centro I <br />
+                  J: Distancia punto de inicio arco del centro J <br />
+                  K: Distancia punto de inicio arco del centro K <br />
+                </code>
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G04 -->
+          <button class="ui-btn" id="btn-5">
+            <span> G04 </span>
+          </button>
+
+          <div class="card" id="5" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G04.png"
+                  alt="Imagen del codigo G04"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G04 P## (Suspensión temporal)</code></p>
+              <p>
+                Suspender: Pausa el movimiento durante un tiempo específico.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G15/G16 -->
+          <button class="ui-btn" id="btn-6">
+            <span> G15/G16 </span>
+          </button>
+
+          <div class="card" id="6" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G15/G16 (Cambio de coordenadas entre cartesianas y
+                  polares)</code
+                >
+              </p>
+              <p>
+                Mando polar: Cambia entre coordenadas cartesianas y polares.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G17 -->
+          <button class="ui-btn" id="btn-7">
+            <span> G17 </span>
+          </button>
+
+          <div class="card" id="7" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G17.png"
+                  alt="Imagen del codigo G17"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G17 (Selecciona el plano XY para interpolación
+                  circular)</code
+                >
+              </p>
+              <p>
+                Selección de plano XY: Configura el plano XY para la
+                interpolación circular.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G18 -->
+          <button class="ui-btn" id="btn-8">
+            <span> G18 </span>
+          </button>
+
+          <div class="card" id="8" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G18.png"
+                  alt="Imagen del codigo G18"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G18 (Selecciona el plano XZ para interpolación
+                  circular)</code
+                >
+              </p>
+              <p>
+                Selección de plano XZ: Configura el plano XZ para la
+                interpolación circular.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G19 -->
+          <button class="ui-btn" id="btn-9">
+            <span> G19 </span>
+          </button>
+
+          <div class="card" id="9" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G19.png"
+                  alt="Imagen del codigo G19"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G19 (Selecciona el plano YZ para interpolación
+                  circular)</code
+                >
+              </p>
+              <p>
+                Selección de plano YZ: Configura el plano YZ para la
+                interpolación circular.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G20 -->
+          <button class="ui-btn" id="btn-10">
+            <span> G20 </span>
+          </button>
+
+          <div class="card" id="10" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G20-21.png"
+                  alt="Imagen del codigo G20"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G20 (Unidades en pulgadas) - TORNO</code></p>
+              <p>
+                Unidades en pulgadas: Establece que las unidades de medida serán
+                en pulgadas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G21 -->
+          <button class="ui-btn" id="btn-11">
+            <span> G21 </span>
+          </button>
+
+          <div class="card" id="11" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G20-21.png"
+                  alt="Imagen del codigo G21"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G21 (Unidades en milímetros) - TORNO</code></p>
+              <p>
+                Unidades en milímetros: Establece que las unidades de medida
+                serán en milímetros.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G40 -->
+          <button class="ui-btn" id="btn-30">
+            <span> G40 </span>
+          </button>
+
+          <div class="card" id="30" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G40.png"
+                  alt="Imagen del codigo G40"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G40 (Desactivación de compensación de radio de
+                  herramienta)</code
+                >
+              </p>
+              <p>
+                Desactivación de compensación: Desactiva la compensación del
+                radio de la herramienta después de su uso.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G41 -->
+          <button class="ui-btn" id="btn-31">
+            <span> G41 </span>
+          </button>
+
+          <div class="card" id="31" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G41.png"
+                  alt="Imagen del codigo G41"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G41 (Compensación de radio de herramienta hacia la
+                  izquierda)</code
+                >
+              </p>
+              <p>
+                Compensación de radio: Compensa el radio de la herramienta para
+                que el borde izquierdo de la herramienta esté a la ruta
+                programada.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G42 -->
+          <button class="ui-btn" id="btn-32">
+            <span> G42 </span>
+          </button>
+
+          <div class="card" id="32" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G42.png"
+                  alt="Imagen del codigo G42"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G42 (Compensación de radio de herramienta hacia la
+                  derecha)</code
+                >
+              </p>
+              <p>
+                Compensación de radio: Compensa el radio de la herramienta para
+                que el borde derecho de la herramienta esté a la ruta
+                programada.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G43 -->
+          <button class="ui-btn" id="btn-33">
+            <span> G43 </span>
+          </button>
+
+          <div class="card" id="33" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p><code>G43 (Compensación de altura de herramienta)</code></p>
+              <p>
+                Compensación de altura: Ajusta la altura de la herramienta para
+                compensar la variabilidad de la longitud de las herramientas.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G53 -->
+          <button class="ui-btn" id="btn-43">
+            <span> G53 </span>
+          </button>
+
+          <div class="card" id="43" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G53.png"
+                  alt="Imagen del código G53"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G53 (Desactivación del sistema de coordenadas local)</code
+                >
+              </p>
+              <p>
+                Restablece el sistema de coordenadas a la configuración
+                estándar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G54 -->
+          <button class="ui-btn" id="btn-44">
+            <span> G54 </span>
+          </button>
+
+          <div class="card" id="44" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G54.png"
+                  alt="Imagen del código G54"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G54 (Selección del sistema de coordenadas de trabajo 1)</code
+                >
+              </p>
+              <p>
+                Selecciona el primer sistema de coordenadas de trabajo para el
+                proceso de maquinado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G55 -->
+          <button class="ui-btn" id="btn-45">
+            <span> G55 </span>
+          </button>
+
+          <div class="card" id="45" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G55.png"
+                  alt="Imagen del código G55"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G55 (Selección del sistema de coordenadas de trabajo 2)</code
+                >
+              </p>
+              <p>Selecciona el segundo sistema de coordenadas de trabajo.</p>
+            </div>
+          </div>
+
+          <!-- Código G56 -->
+          <button class="ui-btn" id="btn-46">
+            <span> G56 </span>
+          </button>
+
+          <div class="card" id="46" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img src="" alt="Imagen del código G56" />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G56 (Selección del sistema de coordenadas de trabajo 3)</code
+                >
+              </p>
+              <p>Selecciona el tercer sistema de coordenadas de trabajo.</p>
+            </div>
+          </div>
+
+          <!-- Código G57 -->
+          <button class="ui-btn" id="btn-47">
+            <span> G57 </span>
+          </button>
+
+          <div class="card" id="47" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G57.png"
+                  alt="Imagen del código G57"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G57 (Selección del sistema de coordenadas de trabajo 4)</code
+                >
+              </p>
+              <p>Selecciona el cuarto sistema de coordenadas de trabajo.</p>
+            </div>
+          </div>
+
+          <!-- Código G58 -->
+          <button class="ui-btn" id="btn-48">
+            <span> G58 </span>
+          </button>
+
+          <div class="card" id="48" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G58.png"
+                  alt="Imagen del código G58"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G58 (Selección del sistema de coordenadas de trabajo 5)</code
+                >
+              </p>
+              <p>Selecciona el quinto sistema de coordenadas de trabajo.</p>
+            </div>
+          </div>
+
+          <!-- Código G59 -->
+          <button class="ui-btn" id="btn-49">
+            <span> G59 </span>
+          </button>
+
+          <div class="card" id="49" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G59.png"
+                  alt="Imagen del código G59"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G59 (Selección del sistema de coordenadas de trabajo 6)</code
+                >
+              </p>
+              <p>Selecciona el sexto sistema de coordenadas de trabajo.</p>
+            </div>
+          </div>
+
+          <!-- Código G70 -->
+          <button class="ui-btn" id="btn-60">
+            <span> G70 </span>
+          </button>
+
+          <div class="card" id="60" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G70.png"
+                  alt="Imagen del código G70"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G70 (Ciclo de acabado de torneado, unidad de trabajo)</code
+                >
+              </p>
+              <p>
+                Inicia el ciclo de acabado de torneado, ejecutando el proceso de
+                corte en una pieza de trabajo, aplicando las configuraciones de
+                la unidad.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G71 -->
+          <button class="ui-btn" id="btn-61">
+            <span> G71 </span>
+          </button>
+
+          <div class="card" id="61" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G71.png"
+                  alt="Imagen del código G71"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G71 (Ciclo de torneado, desbaste)</code></p>
+              <p>
+                Inicia el ciclo de torneado para desbaste de la pieza,
+                eliminando material de forma eficiente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G72 -->
+          <button class="ui-btn" id="btn-62">
+            <span> G72 </span>
+          </button>
+
+          <div class="card" id="62" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G72.png"
+                  alt="Imagen del código G72"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G72 (Ciclo de torneado, acabado)</code></p>
+              <p>
+                Inicia el ciclo de torneado para acabado, proporcionando un
+                acabado más fino en la pieza.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G80 -->
+          <button class="ui-btn" id="btn-70">
+            <span> G80 </span>
+          </button>
+
+          <div class="card" id="70" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p>
+                <code>G80 (Cancelación de ciclo de taladrado o roscado)</code>
+              </p>
+              <p>
+                Cancelación del ciclo de taladrado o roscado activo, devolviendo
+                la máquina a un estado normal de funcionamiento.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G87 -->
+          <button class="ui-btn" id="btn-77">
+            <span> G87 </span>
+          </button>
+
+          <div class="card" id="77" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G87.png"
+                  alt="Imagen del código G87"
+                />
+              </div>
+
+              <p>
+                Este ciclo genera un desbate de forma rectangular, este depende
+                de ciertos valores
+              </p>
+              <h3>Formato:</h3>
+              <p>
+                <code>G87 (Ciclo de cajera rectangular)</code>
+                <code>
+                  X: cota x <br />
+                  Y: cota y <br />
+                  Z: cota z <br />
+                  I: Profundidad <br />
+                  J: Mitad de la longitud de la caja <br />
+                  K: Mitad de la anchura de la caja <br />
+                  B: Distancia entre pasadas <br />
+                  C: <br />
+                  D: <br />
+                  H: <br />
+                  L: <br />
+                  F: Fuerza o velocidad de la maquina <br />
+                </code>
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G88 -->
+          <button class="ui-btn" id="btn-78">
+            <span> G88 </span>
+          </button>
+
+          <div class="card" id="78" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img src="" alt="Imagen del código G88" />
+              </div>
+              <p>
+                Este ciclo realiza el taladrado y luego retira la herramienta a
+                su posición inicial para evitar daños o movimientos no deseados.
+              </p>
+              <h3>Formato:</h3>
+              <p>
+                <code>G88 (Ciclo de desbaste Cajera circular)</code>
+                <code>
+                  X: cota x <br />
+                  Y: cota y <br />
+                  Z: cota z <br />
+                  I: Profundidad <br />
+                  J: Radio del circulo <br />
+                  B: Distancia entre pasadas <br />
+                  D: <br />
+                  H: <br />
+                  L: <br />
+                  F: Fuerza o velocidad de la maquina <br />
+                </code>
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G90 -->
+          <button class="ui-btn" id="btn-80">
+            <span> G90 </span>
+          </button>
+
+          <div class="card" id="80" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G90.png"
+                  alt="Imagen del código G90"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G90 (Programación en modo absoluto)</code></p>
+              <p>
+                Este código define que las coordenadas de los movimientos se
+                toman desde un punto de origen absoluto, es decir, cada punto se
+                define respecto al origen de la máquina.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G91 -->
+          <button class="ui-btn" id="btn-81">
+            <span> G91 </span>
+          </button>
+
+          <div class="card" id="81" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content">
+                <img
+                  src="../../public/CODIGOS-G/G91.png"
+                  alt="Imagen del código G91"
+                />
+              </div>
+              <h3>Formato:</h3>
+              <p><code>G91 (Programación en modo incremental)</code></p>
+              <p>
+                El código G91 define que las coordenadas de los movimientos se
+                calculan en relación al punto de inicio del último movimiento,
+                es decir, en modo incremental.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G92 -->
+          <button class="ui-btn" id="btn-82">
+            <span> G92 </span>
+          </button>
+
+          <div class="card" id="82" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G92 (Establecer la posición del husillo o herramienta)</code
+                >
+              </p>
+              <p>
+                Este código se usa para establecer la posición del husillo o la
+                herramienta en una ubicación específica, útil para
+                compensaciones de herramienta o inicio de operaciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G93 -->
+          <button class="ui-btn" id="btn-83">
+            <span> G93 </span>
+          </button>
+
+          <div class="card" id="83" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p><code>G93 (Velocidad inversa)</code></p>
+              <p>
+                Este código invierte la dirección de la velocidad, permitiendo
+                controlar el movimiento en modo de retroceso en ciertas
+                aplicaciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G94 -->
+          <button class="ui-btn" id="btn-84">
+            <span> G94 </span>
+          </button>
+
+          <div class="card" id="84" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p><code>G94 (Velocidad por minuto)</code></p>
+              <p>
+                El código G94 define que las velocidades de los movimientos
+                deben ser dadas en unidades de longitud por minuto (ej. mm/min o
+                inch/min).
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G95 -->
+          <button class="ui-btn" id="btn-85">
+            <span> G95 </span>
+          </button>
+
+          <div class="card" id="85" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p><code>G95 (Velocidad por revolución)</code></p>
+              <p>
+                Este código establece que las velocidades de movimiento se dan
+                en unidades de revolución por minuto (RPM), en lugar de longitud
+                por minuto.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G96 -->
+          <button class="ui-btn" id="btn-86">
+            <span> G96 </span>
+          </button>
+
+          <div class="card" id="86" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p><code>G96 (Control de velocidad constante)</code></p>
+              <p>
+                El código G96 mantiene la velocidad de corte constante al
+                cambiar la velocidad del husillo según el diámetro de la pieza
+                durante la operación.
+              </p>
+            </div>
+          </div>
+
+          <!-- Código G97 -->
+          <button class="ui-btn" id="btn-87">
+            <span> G97 </span>
+          </button>
+
+          <div class="card" id="87" style="display: none">
+            <div class="tools">
+              <div class="circle">
+                <button class="red box" id="close">
+                  <svg
+                    height="20"
+                    viewBox="0 0 20 20"
+                    width="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m15.8333 5.34166-1.175-1.175-4.6583 4.65834-4.65833-4.65834-1.175 1.175 4.65833 4.65834-4.65833 4.6583 1.175 1.175 4.65833-4.6583 4.6583 4.6583 1.175-1.175-4.6583-4.6583z"
+                      fill="#ffff"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="circle">
+                <button class="yellow box"></button>
+              </div>
+              <div class="circle">
+                <button class="green box"></button>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="img-content"></div>
+              <h3>Formato:</h3>
+              <p>
+                <code
+                  >G97 (Desactivación del control de velocidad constante)</code
+                >
+              </p>
+              <p>
+                Este código desactiva el control de velocidad constante,
+                permitiendo que el husillo funcione a una velocidad constante
+                definida por el operador.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <script>
+        // Función para abrir y cerrar las tarjetas
+        const btns = document.querySelectorAll(".ui-btn");
+        const cards = document.querySelectorAll(".card");
+        const closeBtns = document.querySelectorAll("#close");
+
+        // Función para abrir la tarjeta correspondiente
+        btns.forEach((btn, index) => {
+          btn.addEventListener("click", () => {
+            // Ocultar todos los botones
+            btns.forEach((b) => (b.style.display = "none"));
+
+            // Mostrar la card correspondiente
+            cards[index].style.display = "block";
+          });
+        });
+
+        // Función para cerrar las tarjetas
+        closeBtns.forEach((closeBtn, index) => {
+          closeBtn.addEventListener("click", () => {
+            // Ocultar la card
+            cards[index].style.display = "none";
+
+            // Mostrar todos los botones
+            btns.forEach((b) => (b.style.display = "block"));
+          });
+        });
+      </script>
+    </section>
+  </body>
 </html>

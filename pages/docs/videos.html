@@ -14,6 +14,7 @@
       background-color: #f3f6f9;
       color: #333;
       line-height: 1.6;
+      width: 99%;
     }
 
     .header {
@@ -23,6 +24,7 @@
       padding: 15px 30px;
       background: linear-gradient(135deg, #3498db, #2ecc71);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     }
 
     .logo img {
@@ -111,7 +113,7 @@
     }
 
     .card-front {
-      background-color: #007bff;
+      background-color: #333;
       color: white;
     }
 
@@ -125,8 +127,8 @@
     }
 
     .card-back {
-      background-color: #28a745;
-      color: white;
+      background-color: #fff;
+      color: black;
       transform: rotateY(180deg);
       align-items: flex-start;
       padding: 20px;
@@ -145,8 +147,8 @@
     }
 
     .material-link a {
-      color: white;
-      font-size: 16px;
+      color: Black;
+      font-size: 40px;
       text-decoration: underline;
       transition: color 0.3s;
     }
@@ -165,9 +167,9 @@
     <nav class="navbar">
       <ul class="nav-list">
         <li><a href="../../index.html">Inicio</a></li>
-        <li><a href="#">Fresadora</a></li>
-        <li><a href="#">Torno</a></li>
-        <li><a href="#">Videos</a></li>
+        <li><a href="fresadora.html">Fresadora</a></li>
+        <li><a href="torno.html">Torno</a></li>
+        <li><a href="">Videos</a></li>
       </ul>
     </nav>
   </header>
@@ -301,6 +303,36 @@
             <iframe src="https://www.youtube.com/embed/p-oofvMmUz0?si=YXwDkCope1gQiuiP" frameborder="0" allowfullscreen></iframe>
             <div class="material-link">
               <a href="https://drive.google.com/drive/folders/1eJ3xon3RrvbqHZI-ILgXhyeCd8d85UlN?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>Movimientos básicos en fresa</h4>
+            <p>En este video se explican los siguientes temas: fresa CNC, códigos G y M como la explicación de los más básicos que se utilizan para el mecanizado de piezas, al final del video se realiza una práctica donde se observa su funcionamiento.</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/-Zww5ODAagk?si=2rdLYaS6EUpuaHMV" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1ikUnrco0Py1JCMDJqbHJwnUatEsNkjmF?usp=drive_link" target="_blank">Material didáctico</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h4>Solid CAM</h4>
+            <p>En este video se explican los siguientes temas: Fresa CNC, es esta video vamos a ver como utilizar la Solid CAM para sacar el código de manera automática</p>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://www.youtube.com/embed/K6N0Wgr9o30?si=yNyzguQwAOuEFWJQ" frameborder="0" allowfullscreen></iframe>
+            <div class="material-link">
+              <a href="https://drive.google.com/drive/folders/1n8yKhKGu476YgiK540RhgnW32zThiUSQ?usp=drive_link" target="_blank">Material didáctico</a>
             </div>
           </div>
         </div>
