@@ -1,12 +1,2111 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css_globals/style.css">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="content">
+      <h2>Lista de Códigos G y M</h2>
+
+      <h3>Torno FANUC Código G</h3>
+
+      <div class="fanuc-torn">
+        <button class="ui-btn" id="btn-1">
+          <span>G00</span>
+        </button>
+        <div class="card" id="1" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G00" />
+            </div>
+            <h3>Posicionamiento rápido</h3>
+            <p>Movimiento sin corte a una posición especificada.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-2">
+          <span>G01</span>
+        </button>
+        <div class="card" id="2" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G01" />
+            </div>
+            <h3>Corte lineal</h3>
+            <p>Movimiento lineal a una velocidad de avance programada.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-3">
+          <span>G02</span>
+        </button>
+        <div class="card" id="3" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G02" />
+            </div>
+            <h3>Corte circular horario</h3>
+            <p>Movimiento en arco en el sentido de las agujas del reloj.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-4">
+          <span>G03</span>
+        </button>
+        <div class="card" id="4" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G03" />
+            </div>
+            <h3>Corte circular antihorario</h3>
+            <p>
+              Movimiento en arco en sentido contrario a las agujas del reloj.
+            </p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-5">
+          <span>G04</span>
+        </button>
+        <div class="card" id="5" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G04" />
+            </div>
+            <h3>Pausa (dwell)</h3>
+            <p>Suspende el movimiento durante un tiempo determinado.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-6">
+          <span>G09</span>
+        </button>
+        <div class="card" id="6" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G09" />
+            </div>
+            <h3>Parada exacta</h3>
+            <p>Detiene el movimiento exactamente en la posición programada.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-7">
+          <span>G20</span>
+        </button>
+        <div class="card" id="7" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G20" />
+            </div>
+            <h3>Entrada imperial</h3>
+            <p>Configura la máquina para trabajar en pulgadas.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-8">
+          <span>G21</span>
+        </button>
+        <div class="card" id="8" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G21" />
+            </div>
+            <h3>Entrada métrica</h3>
+            <p>Configura la máquina para trabajar en milímetros.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-9">
+          <span>G22</span>
+        </button>
+        <div class="card" id="9" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G22" />
+            </div>
+            <h3>Límite de recorrido activo</h3>
+            <p>Activa los límites de recorrido internos.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-10">
+          <span>G23</span>
+        </button>
+        <div class="card" id="10" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del código G23" />
+            </div>
+            <h3>Límite de recorrido desactivado</h3>
+            <p>Desactiva los límites de recorrido internos.</p>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-24">
+          <span> G24 </span>
+        </button>
+
+        <div class="card" id="24" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G24" />
+            </div>
+            <h3>
+              Rotación de husillo en sentido contrario a las agujas del reloj:
+              Se utiliza para los movimientos del husillo en el sentido
+              antihorario.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-25">
+          <span> G25 </span>
+        </button>
+
+        <div class="card" id="25" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G25" />
+            </div>
+            <h3>
+              Rotación del husillo hacia adelante: Este comando se utiliza para
+              la rotación de husillo hacia el sentido horario, lo cual es común
+              en operaciones de corte.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-26">
+          <span> G26 </span>
+        </button>
+
+        <div class="card" id="26" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G26" />
+            </div>
+            <h3>
+              Parada de ciclo: Detiene el ciclo activo sin cancelar otros
+              comandos, por ejemplo, interrupción de un ciclo de corte.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-27">
+          <span> G27 </span>
+        </button>
+
+        <div class="card" id="27" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G27" />
+            </div>
+            <h3>
+              Verificación de seguridad: Realiza una comprobación para asegurar
+              que todos los sistemas de la máquina están operando de manera
+              segura antes de proceder con la operación.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-28">
+          <span> G28 </span>
+        </button>
+
+        <div class="card" id="28" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G28" />
+            </div>
+            <h3>
+              Retorno al punto de referencia: Mueve la máquina al punto de
+              referencia establecido, comúnmente usado para retornar al inicio
+              después de un ciclo de trabajo.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-29">
+          <span> G29 </span>
+        </button>
+
+        <div class="card" id="29" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G29" />
+            </div>
+            <h3>
+              Retorno desde el punto de referencia: Regresa a la posición
+              inicial desde el punto de referencia.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-30">
+          <span> G30 </span>
+        </button>
+
+        <div class="card" id="30" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G30" />
+            </div>
+            <h3>
+              Retorno al segundo punto de referencia: Regresa al segundo punto
+              de referencia programado.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-31">
+          <span> G32 </span>
+        </button>
+
+        <div class="card" id="31" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G32" />
+            </div>
+            <h3>
+              Corte de roscado: Se utiliza para roscar piezas de trabajo,
+              generando una rosca en el material.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-32">
+          <span> G40 </span>
+        </button>
+
+        <div class="card" id="32" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G40" />
+            </div>
+            <h3>
+              Cancelar compensación de radio de herramienta: Anula cualquier
+              compensación aplicada al radio de la herramienta.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-33">
+          <span> G41 </span>
+        </button>
+
+        <div class="card" id="33" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G41" />
+            </div>
+            <h3>
+              Compensación de radio de herramienta izquierda: Aplica
+              compensación del radio a la izquierda del trayecto de la
+              herramienta.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-34">
+          <span> G42 </span>
+        </button>
+
+        <div class="card" id="34" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G42" />
+            </div>
+            <h3>
+              Compensación de radio de herramienta derecha: Aplica compensación
+              del radio a la derecha del trayecto de la herramienta.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-35">
+          <span> G50 </span>
+        </button>
+
+        <div class="card" id="35" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G50" />
+            </div>
+            <h3>
+              Establecer las coordenadas de la pieza y RPM máximas del husillo:
+              Configura las coordenadas locales y limita las RPM del husillo.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-36">
+          <span> G52 </span>
+        </button>
+
+        <div class="card" id="36" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G52" />
+            </div>
+            <h3>
+              Establecer el sistema de coordenadas local: Configura un sistema
+              de coordenadas local para las operaciones de la máquina.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-37">
+          <span> G53 </span>
+        </button>
+
+        <div class="card" id="37" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G53" />
+            </div>
+            <h3>
+              Seleccionar el sistema de coordenadas de la máquina: Utiliza las
+              coordenadas de la máquina en lugar del sistema de coordenadas
+              local.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-38">
+          <span> G70 </span>
+        </button>
+
+        <div class="card" id="38" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G70" />
+            </div>
+            <h3>
+              Ciclo de acabado: Ciclo utilizado para realizar un acabado preciso
+              en una pieza de trabajo.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-39">
+          <span> G71 </span>
+        </button>
+
+        <div class="card" id="39" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G71" />
+            </div>
+            <h3>
+              Ciclo de desbaste de diámetros interiores y exteriores: Utilizado
+              para desbastar diámetros tanto interiores como exteriores de la
+              pieza.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-40">
+          <span> G72 </span>
+        </button>
+
+        <div class="card" id="40" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G72" />
+            </div>
+            <h3>
+              Ciclo de desbaste por pasos: Ciclo que realiza desbaste en pasos
+              sucesivos, ideal para material duro o trabajos complejos.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-41">
+          <span> G73 </span>
+        </button>
+
+        <div class="card" id="41" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G73" />
+            </div>
+            <h3>
+              Ciclo de formación repetitiva: Ciclo de formación repetitiva de
+              formas específicas, como agujeros o ranuras.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-42">
+          <span> G74 </span>
+        </button>
+
+        <div class="card" id="42" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G74" />
+            </div>
+            <h3>
+              Ciclo de perforación en dirección Z: Realiza perforación en el eje
+              Z, útil para agujeros profundos en piezas largas.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-43">
+          <span> G75 </span>
+        </button>
+
+        <div class="card" id="43" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G75" />
+            </div>
+            <h3>
+              Ciclo de ranurado en dirección X: Utilizado para realizar
+              ranurados en el eje X, adecuado para piezas con geometrías
+              complejas.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-44">
+          <span> G76 </span>
+        </button>
+
+        <div class="card" id="44" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G76" />
+            </div>
+            <h3>
+              Ciclo de corte de roscas: Realiza un corte de rosca preciso, con
+              control avanzado de la profundidad de la rosca.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-45">
+          <span> G80 </span>
+        </button>
+
+        <div class="card" id="45" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G80" />
+            </div>
+            <h3>
+              Cancelar ciclo fijo: Finaliza cualquier ciclo fijo activo, como
+              perforación o roscado.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-46">
+          <span> G83 </span>
+        </button>
+
+        <div class="card" id="46" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G83" />
+            </div>
+            <h3>
+              Ciclo de perforación profunda: Permite perforar agujeros profundos
+              con intervalos de retracción para eliminar virutas.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-47">
+          <span> G84 </span>
+        </button>
+
+        <div class="card" id="47" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G84" />
+            </div>
+            <h3>
+              Ciclo de roscado: Realiza un roscado en una pieza con un avance
+              controlado, ideal para agujeros con rosca.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-48">
+          <span> G85 </span>
+        </button>
+
+        <div class="card" id="48" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G85" />
+            </div>
+            <h3>
+              Ciclo de taladrado frontal: Realiza perforación en el eje frontal,
+              adecuado para taladrar de manera eficiente.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-49">
+          <span> G86 </span>
+        </button>
+
+        <div class="card" id="49" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G86" />
+            </div>
+            <h3>
+              Ciclo de perforación con pausa en el fondo: Realiza perforación y
+              pausa en el fondo del agujero, útil para evitar
+              sobrecalentamientos.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-50">
+          <span> G87 </span>
+        </button>
+
+        <div class="card" id="50" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G87" />
+            </div>
+            <h3>
+              Ciclo de perforación lateral: Permite perforar en el eje lateral
+              para obtener agujeros en zonas difíciles de alcanzar.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-51">
+          <span> G88 </span>
+        </button>
+
+        <div class="card" id="51" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G88" />
+            </div>
+            <h3>
+              Ciclo de roscado lateral: Realiza un roscado en el eje lateral de
+              una pieza.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-52">
+          <span> G89 </span>
+        </button>
+
+        <div class="card" id="52" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G89" />
+            </div>
+            <h3>
+              Ciclo de taladrado lateral: Realiza perforación en el eje lateral,
+              adecuado para agujeros en piezas con geometrías complejas.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-53">
+          <span> G90 </span>
+        </button>
+
+        <div class="card" id="53" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G90" />
+            </div>
+            <h3>
+              Ciclo de corte de diámetros interiores y exteriores: Realiza
+              cortes en diámetros internos y externos con alta precisión.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-54">
+          <span> G92 </span>
+        </button>
+
+        <div class="card" id="54" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G92" />
+            </div>
+            <h3>
+              Ciclo de corte de roscas: Establece las coordenadas para realizar
+              un corte de rosca en la pieza.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-55">
+          <span> G94 </span>
+        </button>
+
+        <div class="card" id="55" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G94" />
+            </div>
+            <h3>
+              Ciclo de corte por paso: Realiza el corte de una pieza en pasos
+              sucesivos para garantizar precisión.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-56">
+          <span> G96 </span>
+        </button>
+
+        <div class="card" id="56" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G96" />
+            </div>
+            <h3>
+              Control de velocidad superficial constante: Mantiene la velocidad
+              constante para mantener la calidad de corte.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-57">
+          <span> G97 </span>
+        </button>
+
+        <div class="card" id="57" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G97" />
+            </div>
+            <h3>
+              Cancelar control de velocidad superficial constante: Desactiva el
+              control de velocidad constante.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-58">
+          <span> G98 </span>
+        </button>
+
+        <div class="card" id="58" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G98" />
+            </div>
+            <h3>
+              Avance por minuto: Especifica la velocidad de avance en unidades
+              de avance por minuto.
+            </h3>
+          </div>
+        </div>
+
+        <button class="ui-btn" id="btn-59">
+          <span> G99 </span>
+        </button>
+
+        <div class="card" id="59" style="display: none">
+          <div class="tools">
+            <div class="circle">
+              <button class="red box" id="close"></button>
+            </div>
+            <div class="circle">
+              <button class="yellow box"></button>
+            </div>
+            <div class="circle">
+              <button class="green box"></button>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="img-content">
+              <img src="" alt="Imagen del codigo G99" />
+            </div>
+            <h3>
+              Avance por revolución: Especifica el avance por revolución del
+              husillo.
+            </h3>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+      <h2>Lista de Códigos G y M</h2>
+
+      <h3>Fresadora FANUC Código G</h3>
+
+      <div class="fanuc-fresa">
+        <div class="content">
+          <div class="fanuc-torn">
+            <button class="ui-btn" id="btn-1">
+              <span> G00 </span>
+            </button>
+            <div class="card" id="1" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G00" />
+                </div>
+                <h3>
+                  Posicionamiento rápido: Mueve el cortador rápidamente a la
+                  posición deseada sin cortar.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-2">
+              <span> G01 </span>
+            </button>
+            <div class="card" id="2" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G01" />
+                </div>
+                <h3>
+                  Corte lineal: Movimiento lineal con avance de corte
+                  especificado.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-3">
+              <span> G02 </span>
+            </button>
+            <div class="card" id="3" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G02" />
+                </div>
+                <h3>
+                  Arco circular en sentido horario: Movimiento circular en el
+                  sentido de las agujas del reloj.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-4">
+              <span> G03 </span>
+            </button>
+            <div class="card" id="4" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G03" />
+                </div>
+                <h3>
+                  Arco circular en sentido antihorario: Movimiento circular en
+                  sentido antihorario.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-5">
+              <span> G04 </span>
+            </button>
+            <div class="card" id="5" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G04" />
+                </div>
+                <h3>
+                  Suspender: Pausa el movimiento durante un tiempo específico.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-6">
+              <span> G15/G16 </span>
+            </button>
+            <div class="card" id="6" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G15/G16" />
+                </div>
+                <h3>
+                  Mando polar: Cambia entre coordenadas cartesianas y polares.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-7">
+              <span> G17 </span>
+            </button>
+            <div class="card" id="7" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G17" />
+                </div>
+                <h3>
+                  Selección de plano XY: Configura el plano XY para la
+                  interpolación circular.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-8">
+              <span> G18 </span>
+            </button>
+            <div class="card" id="8" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G18" />
+                </div>
+                <h3>
+                  Selección de plano XZ: Configura el plano XZ para la
+                  interpolación circular.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-9">
+              <span> G19 </span>
+            </button>
+            <div class="card" id="9" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G19" />
+                </div>
+                <h3>
+                  Selección de plano YZ: Configura el plano YZ para la
+                  interpolación circular.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-10">
+              <span> G28 </span>
+            </button>
+            <div class="card" id="10" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G28" />
+                </div>
+                <h3>
+                  Retorno al origen de la máquina: Mueve la máquina al punto de
+                  origen.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-11">
+              <span> G30 </span>
+            </button>
+            <div class="card" id="11" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G30" />
+                </div>
+                <h3>
+                  Retorno al segundo o tercer origen: Mueve la máquina a puntos
+                  de origen secundarios.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-12">
+              <span> G40 </span>
+            </button>
+            <div class="card" id="12" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G40" />
+                </div>
+                <h3>
+                  Cancelar compensación del diámetro de la herramienta: Anula
+                  cualquier compensación aplicada al diámetro de la herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-13">
+              <span> G41 </span>
+            </button>
+            <div class="card" id="13" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G41" />
+                </div>
+                <h3>
+                  Compensación izquierda del diámetro de la herramienta:
+                  Compensa el diámetro a la izquierda del trayecto de la
+                  herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-14">
+              <span> G42 </span>
+            </button>
+            <div class="card" id="14" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G42" />
+                </div>
+                <h3>
+                  Compensación derecha del diámetro de la herramienta: Compensa
+                  el diámetro a la derecha del trayecto de la herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-15">
+              <span> G43 </span>
+            </button>
+            <div class="card" id="15" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G43" />
+                </div>
+                <h3>
+                  Compensación de longitud de la herramienta positiva: Aplica
+                  compensación positiva de la longitud de la herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-16">
+              <span> G44 </span>
+            </button>
+            <div class="card" id="16" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G44" />
+                </div>
+                <h3>
+                  Compensación de longitud de la herramienta negativa: Aplica
+                  compensación negativa de la longitud de la herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-17">
+              <span> G49 </span>
+            </button>
+            <div class="card" id="17" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G49" />
+                </div>
+                <h3>
+                  Cancelar compensación de la longitud de la herramienta: Anula
+                  cualquier compensación aplicada a la longitud de la
+                  herramienta.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-18">
+              <span> G53 </span>
+            </button>
+            <div class="card" id="18" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G53" />
+                </div>
+                <h3>
+                  Selección del sistema de coordenadas de la máquina: Utiliza
+                  las coordenadas del sistema de la máquina en lugar del sistema
+                  de coordenadas de la pieza.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-19">
+              <span> G54-G59 </span>
+            </button>
+            <div class="card" id="19" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G54-G59" />
+                </div>
+                <h3>
+                  Selección del sistema de coordenadas de la pieza: Configura
+                  diferentes sistemas de coordenadas para varias operaciones en
+                  la pieza.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-20">
+              <span> G73 </span>
+            </button>
+            <div class="card" id="20" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G73" />
+                </div>
+                <h3>
+                  Ciclo de taladrado profundo de alta velocidad: Ciclo para
+                  perforar agujeros profundos rápidamente.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-21">
+              <span> G74 </span>
+            </button>
+            <div class="card" id="21" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G74" />
+                </div>
+                <h3>
+                  Ciclo de roscado en espiral izquierda: Ciclo para roscar en
+                  espiral hacia la izquierda.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-22">
+              <span> G76 </span>
+            </button>
+            <div class="card" id="22" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G76" />
+                </div>
+                <h3>
+                  Ciclo de roscado fino: Ciclo para crear roscas de alta
+                  precisión.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-23">
+              <span> G80 </span>
+            </button>
+            <div class="card" id="23" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G80" />
+                </div>
+                <h3>
+                  Cancelar ciclo fijo: Finaliza cualquier ciclo fijo en
+                  ejecución.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-24">
+              <span> G81 </span>
+            </button>
+            <div class="card" id="24" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G81" />
+                </div>
+                <h3>Ciclo de perforación: Ciclo básico de taladrado.</h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-25">
+              <span> G82 </span>
+            </button>
+            <div class="card" id="25" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G82" />
+                </div>
+                <h3>
+                  Ciclo de perforación central: Perforación con una pausa en el
+                  fondo del agujero.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-26">
+              <span> G83 </span>
+            </button>
+            <div class="card" id="26" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G83" />
+                </div>
+                <h3>
+                  Ciclo de taladrado profundo: Ciclo para perforar agujeros
+                  profundos con retiradas intermitentes para despejar virutas.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-27">
+              <span> G84 </span>
+            </button>
+            <div class="card" id="27" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G84" />
+                </div>
+                <h3>
+                  Ciclo de roscado en espiral derecha: Ciclo para roscar en
+                  espiral hacia la derecha.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-28">
+              <span> G85-G89 </span>
+            </button>
+            <div class="card" id="28" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G85-G89" />
+                </div>
+                <h3>
+                  Ciclo de mandrinado y otros ciclos específicos: Diferentes
+                  ciclos de perforación, mandrinado y taladrado.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-29">
+              <span> G90 </span>
+            </button>
+            <div class="card" id="29" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G90" />
+                </div>
+                <h3>
+                  Comando de valor absoluto: Utiliza coordenadas absolutas para
+                  el movimiento.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-30">
+              <span> G91 </span>
+            </button>
+            <div class="card" id="30" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G91" />
+                </div>
+                <h3>
+                  Comando de valor incremental: Utiliza coordenadas
+                  incrementales para el movimiento.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-31">
+              <span> G92 </span>
+            </button>
+            <div class="card" id="31" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G92" />
+                </div>
+                <h3>
+                  Fijar el sistema de coordenadas de la pieza: Establece la
+                  ubicación del sistema de coordenadas de la pieza actual.
+                </h3>
+              </div>
+            </div>
+
+            <button class="ui-btn" id="btn-32">
+              <span> G98 </span>
+            </button>
+            <div class="card" id="32" style="display: none">
+              <div class="tools">
+                <div class="circle">
+                  <button class="red box" id="close"></button>
+                </div>
+                <div class="circle">
+                  <button class="yellow box"></button>
+                </div>
+                <div class="circle">
+                  <button class="green box"></button>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="img-content">
+                  <img src="" alt="Imagen del código G98" />
+                </div>
+                <h3>
+                  Ciclo fijo de retorno al punto de inicio: Vuelve al punto
+                  inicial después de un ciclo fijo.
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Función para abrir y cerrar las tarjetas
+      const btns = document.querySelectorAll(".ui-btn");
+      const cards = document.querySelectorAll(".card");
+      const closeBtns = document.querySelectorAll("#close");
+
+      // Función para abrir la tarjeta correspondiente
+      btns.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          // Ocultar todos los botones
+          btns.forEach((b) => (b.style.display = "none"));
+
+          // Mostrar la card correspondiente
+          cards[index].style.display = "block";
+        });
+      });
+
+      // Función para cerrar las tarjetas
+      closeBtns.forEach((closeBtn, index) => {
+        closeBtn.addEventListener("click", () => {
+          // Ocultar la card
+          cards[index].style.display = "none";
+
+          // Mostrar todos los botones
+          btns.forEach((b) => (b.style.display = "block"));
+        });
+      });
+    </script>
+  </body>
 </html>
