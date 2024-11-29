@@ -22,68 +22,67 @@
     }
 
     .accordion {
-      width: 80%;
-      margin: 20px auto;
-      border: 1px solid #555;
-      border-radius: 8px;
-      overflow: hidden;
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid transparent;
     }
 
     .accordion-item {
-      border-bottom: 1px solid #555;
-    }
-
-    .accordion-item:last-child {
-      border-bottom: none;
+        margin-bottom: 20px; /* Espaciado entre acordeones */
+        border: 1px solid #555;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #2e2e2e; /* Fondo similar al de la captura */
     }
 
     .accordion-header {
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.3s;
+        background-color: #eae9c3; /* Color similar al encabezado */
+        color: rgb(18, 14, 14);
+        padding: 15px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     .accordion-header:hover {
-      background-color: #555;
+        background-color: #666; /* Hover que resalta */
     }
 
     .accordion-header h2 {
-      margin: 0;
-      font-size: 1.2em;
+        margin: 0;
+        font-size: 1.1em;
     }
 
     .accordion-header .icon {
-      font-size: 1.5em;
-      transition: transform 0.3s;
+        font-size: 1.5em;
+        transition: transform 0.3s;
     }
 
     .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-      background-color: white;
-      color: #333;
-      padding: 0 15px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        background-color: #f5f5f5; /* Fondo del contenido acordeón */
+        color: #333;
+        padding: 0 15px;
     }
 
     .accordion-content p {
-      margin: 15px 0;
+        margin: 15px 0;
     }
 
     .accordion-item.active .accordion-header .icon {
-      transform: rotate(90deg);
+        transform: rotate(90deg);
     }
 
     .accordion-item.active .accordion-content {
-      max-height: 300px;
-      padding: 15px;
+        max-height: 300px;
+        padding: 15px;
     }
   </style>
+
 </head>
 
 <body>
