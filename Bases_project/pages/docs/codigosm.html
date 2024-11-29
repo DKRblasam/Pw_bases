@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabla Interactiva de Códigos G</title>
  
-  <script src="../../src/JS/scripts.js"></script>
-
   <style>
     body {
       font-family: Poppins, sans-serif;
@@ -99,11 +97,6 @@
     .info-content.active~.line {
       opacity: 1;
     }
-
-    #content {
-      width: max-content;
-      margin: 0 auto;
-    }
   </style>
   <link rel="stylesheet" href="../../css_globals/style.css">
 </head>
@@ -112,7 +105,7 @@
 
   <header class="head">
 
-    <div class="icon"><img src="../../public/logo.webp"></div>
+    <div class="icon"></div>
 
     <nav>
       <ul class="nav">
@@ -120,23 +113,23 @@
           <a href="../../index.html">Inicio</a>
         </li>
         <li class="menu-item">
-          <a href="fresadora.html">fresadora</a>
+          <a href="#">fresadora</a>
           <ul class="submenu">
             <li><a href="codigog.html" class="submenu_d">Codigos G</a></li>
             <li><a href="codigosm.html" class="submenu_d">Codigos M</a></li>
-          
+            <li><a href="pages/#" class="submenu_d">Parametros</a></li>
           </ul>
         </li>
         <li class="menu-item">
           <a href="torno.html">Torno</a>
           <ul class="submenu">
-            <li><a href="trabajando.html" class="submenu_d">Codigos G</a></li>
-            <li><a href="trabajando.html" class="submenu_d">Codigos M</a></li>
-           
+            <li><a href="codigog.html" class="submenu_d">Codigos G</a></li>
+            <li><a href="pages/#" class="submenu_d">Codigos M</a></li>
+            <li><a href="pages/#" class="submenu_d">Parametros</a></li>
           </ul>
         </li>
         <li class="menu-item">
-          <a href="trabajando.html">Videos</a>
+          <a href="#">Videos</a>
         </li>
       </ul>
     </nav>
@@ -165,10 +158,9 @@
     </div>
   </header>
 
-  <div class="content">
-    
+  <div id="content">
+    <script type="module" src="../../src/codigom.jsx"></script>
   </div>
-
 </body>
 
 </html>
