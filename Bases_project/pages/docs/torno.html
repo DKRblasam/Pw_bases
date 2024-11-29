@@ -5,169 +5,370 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="../../src/JS/scripts.js"></script>
-  <link rel="stylesheet" href="../../css_globals/style.css">  
-  <title>Torno</title>
+  <title>Torno CNC</title>
+  <style>
+    /* General */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .pc {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .logo img {
+      height: 70px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-list a:hover {
+      background-color: #2980b9;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      border-radius: 4px;
+      z-index: 10;
+      list-style: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .dropdown-menu li {
+      padding: 0;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+      }
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .op {
+      text-align: center;
+      width: 200px;
+    }
+
+    .img-op img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .img-op img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-op {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .text-op:hover {
+      color: #3498db;
+    }
+
+    /* Torno Section */
+    .torno-container {
+      margin-top: 30px;
+    }
+
+    .torno-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .torno-imagen img {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .torno-info h1 {
+      font-size: 28px;
+      color: #2c3e50;
+    }
+
+    .torno-info p {
+      font-size: 16px;
+      color: #7f8c8d;
+    }
+
+    /* Technical Section */
+    .seccion-tecnica h2 {
+      font-size: 24px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+    }
+
+    .seccion-tecnica p {
+      margin-bottom: 15px;
+      color: #7f8c8d;
+    }
+
+    .seccion-tecnica ul,
+    .seccion-tecnica ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .seccion-tecnica li {
+      margin-bottom: 10px;
+      color: #7f8c8d;
+    }
+
+    .seccion-tecnica strong {
+      color: #2c3e50;
+    }
+
+    /* Specifications Table */
+    .tabla-especificaciones {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .tabla-especificaciones th,
+    .tabla-especificaciones td {
+      padding: 10px 15px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    .tabla-especificaciones th {
+      background-color: #3498db;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .tabla-especificaciones td {
+      background-color: #fff;
+    }
+
+    .tabla-especificaciones tr:nth-child(even) td {
+      background-color: #f8f9fa;
+    }
+
+  </style>
 </head>
 
 <body>
   <section class="pc">
-    <header class="head">
-
-      <div class="icon"><img src="../../public/logo.webp"></div>
-
-      <nav>
-        <ul class="nav">
-          <li class="menu-item">
-            <a href="../../index.html">Inicio</a>
-          </li>
-          <li class="menu-item">
-            <a href="fresadora.html">fresadora</a>
-            <ul class="submenu">
-              <li><a href="codigog.html" class="submenu_d">Codigos G</a></li>
-              <li><a href="codigosm.html" class="submenu_d">Codigos M</a></li>
+    <header class="header">
+      <div class="logo">
+        <img src="/public/light-icon.webp" alt="Logo">
+      </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="#">Inicio</a></li>
+          <li class="dropdown">
+            <a href="/pages/docs/fresadora.html">Fresadora</a>
+            <ul class="dropdown-menu">
+              <li><a href="pages/docs/codigog.html">Códigos G</a></li>
+              <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
             </ul>
           </li>
-          <li class="menu-item">
+          <li class="dropdown">
             <a href="#">Torno</a>
-            <ul class="submenu">
-              <li><a href="trabajando.html" class="submenu_d">Codigos G</a></li>
-              <li><a href="trabajando.html" class="submenu_d">Codigos M</a></li>
+            <ul class="dropdown-menu">
+              <li><a href="pages/docs/codigog.html">Códigos G</a></li>
+              <li><a href="pages/docs/codigosm.html">Códigos M</a></li>
             </ul>
           </li>
-          <li class="menu-item">
-            <a href="videos.html">Videos</a>
-          </li>
+          <li><a href="/pages/docs/videos.html">Videos</a></li>
         </ul>
       </nav>
-
-      <!-- Modo oscuro/claro -->
-      <div class="night">
-        <label for="themeToggle" class="themeToggle st-sunMoonThemeToggleBtn">
-          <input type="checkbox" id="themeToggle" class="themeToggleInput"
-            aria-label="Alternar entre modo oscuro y claro" />
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" stroke="none">
-            <mask id="moon-mask">
-              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-              <circle cx="11" cy="3" r="8" fill="black"></circle>
-            </mask>
-            <circle class="sunMoon" cx="10" cy="10" r="8" mask="url(#moon-mask)"></circle>
-            <g>
-              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
-              <circle class="sunRay sunRay2" cx="14" cy="16.928" r="1.5"></circle>
-              <circle class="sunRay sunRay3" cx="6" cy="16.928" r="1.5"></circle>
-              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-              <circle class="sunRay sunRay5" cx="6" cy="3.1718" r="1.5"></circle>
-              <circle class="sunRay sunRay6" cx="14" cy="3.1718" r="1.5"></circle>
-            </g>
-          </svg>
-        </label>
-      </div>
     </header>
 
-      <br><br>
-
-      <div class="options">
-        <div class="op">
-          <a href="trabajando.html" class="img-op"><img src="../../public/images.webp" alt=""></a>
-          <a href="trabajando.html" class="text-op">Codigos G</a>
-        </div>
-        
-        <div class="op">
-          <a href="trabajando.html" class="img-op"><img src="../../public/16-1.webp" alt=""></a>
-          <a href="trabajando.html" class="text-op">Codigos M</a>
-        </div>
+    <div class="options">
+      <div class="op">
+        <a href="trabajando.html" class="img-op"><img src="../../public/images.webp" alt=""></a>
+        <a href="trabajando.html" class="text-op">Códigos G</a>
       </div>
-      <div class="torno-container">
-        <div class="torno-header">
-            <div class="torno-imagen"></div>
-            <div class="torno-info">
-                <h1>Torno CNC</h1>
-                <p>Máquina herramienta utilizada para el mecanizado de piezas mediante el giro de la pieza de trabajo.</p>
-            </div>
-        </div>
-    
-        <div class="seccion-tecnica">
-            <h2>Descripción General</h2>
-            <p>El torno CNC es una máquina herramienta que permite mecanizar piezas de forma precisa mediante el movimiento rotativo de la pieza de trabajo. Realiza diversas operaciones como:</p>
-            <ul>
-                <li>Grosor de piezas</li>
-                <li>Conicidad</li>
-                <li>Roscas</li>
-                <li>Perforaciones</li>
-                <li>Desbaste y acabado</li>
-                <li>Fresado en el torno</li>
-            </ul>
-        </div>
-    
-        <div class="seccion-tecnica">
-            <h2>Componentes Principales</h2>
-            <ol>
-                <li><strong>Base:</strong> Estructura que soporta todos los componentes del torno.</li>
-                <li><strong>Carro:</strong> Elemento que se desplaza a lo largo de la bancada.</li>
-                <li><strong>Mandril:</strong> Dispositivo que sujeta la pieza de trabajo.</li>
-                <li><strong>Husillo:</strong> Eje que hace girar la pieza de trabajo.</li>
-                <li><strong>Motor:</strong> Proporciona la potencia necesaria para el giro del husillo.</li>
-                <li><strong>Control CNC:</strong> Sistema que permite programar y controlar las operaciones del torno.</li>
-            </ol>
-        </div>
-    
-        <div class="seccion-tecnica">
-            <h2>Especificaciones Técnicas</h2>
-            <table class="tabla-especificaciones">
-                <tr>
-                    <th>Parámetro</th>
-                    <th>Especificación</th>
-                </tr>
-                <tr>
-                    <td>Potencia del motor</td>
-                    <td>5-10 HP</td>
-                </tr>
-                <tr>
-                    <td>Velocidad del husillo</td>
-                    <td>50-3000 RPM</td>
-                </tr>
-                <tr>
-                    <td>Precisión de posicionamiento</td>
-                    <td>±0.01 mm</td>
-                </tr>
-                <tr>
-                    <td>Materiales de mecanizado</td>
-                    <td>Acero, aluminio, plástico, bronce</td>
-                </tr>
-                <tr>
-                    <td>Área de trabajo</td>
-                    <td>600 mm de longitud, 300 mm de diámetro</td>
-                </tr>
-                <tr>
-                    <td>Peso</td>
-                    <td>300-500 kg</td>
-                </tr>
-            </table>
-        </div>
-    
-        <div class="seccion-tecnica">
-            <h2>Tipos de Tornos</h2>
-            <ul>
-                <li><strong>Torno Vertical:</strong> Diseñado para trabajos en piezas grandes.</li>
-                <li><strong>Torno Horizontal:</strong> El más común, utilizado para la mayoría de los trabajos.</li>
-                <li><strong>Torno CNC:</strong> Control numérico por computadora para mayor precisión y automatización.</li>
-                <li><strong>Torno de Bancada:</strong> Para trabajos más ligeros y de menor tamaño.</li>
-            </ul>
-        </div>
-    
-        <div class="seccion-tecnica">
-            <h2>Aplicaciones Industriales</h2>
-            <ul>
-                <li>Fabricación de ejes y piezas cilíndricas</li>
-                <li>Industria automotriz</li>
-                <li>Producción de componentes mecánicos</li>
-                <li>Fabricación de moldes y matrices</li>
-                <li>Prototipado y producción en serie</li>
-                <li>Reparación de piezas industriales</li>
-            </ul>
-        </div>
+      
+      <div class="op">
+        <a href="trabajando.html" class="img-op"><img src="../../public/16-1.webp" alt=""></a>
+        <a href="trabajando.html" class="text-op">Códigos M</a>
+      </div>
     </div>
 
+    <div class="torno-container">
+      <div class="torno-header">
+        <div class="torno-imagen">
+          <img src="../../public/images (10).webp" alt="">
+        </div>
+        <div class="torno-info">
+          <h1>Torno CNC</h1>
+          <p>Descripción de las características y especificaciones del torno CNC</p>
+        </div>
+      </div>
+
+      <div class="seccion-tecnica">
+        <h2>Especificaciones Técnicas</h2>
+        <p>Detalles clave del torno CNC.</p>
+        <ul>
+          <li><strong>Potencia</strong>: 5 kW</li>
+          <li><strong>Diámetro máximo de trabajo</strong>: 350 mm</li>
+          <li><strong>Velocidad máxima</strong>: 3000 rpm</li>
+        </ul>
+
+        <table class="tabla-especificaciones">
+          <thead>
+            <tr>
+              <th>Especificación</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diámetro máximo de trabajo</td>
+              <td>350 mm</td>
+            </tr>
+            <tr>
+              <td>Potencia</td>
+              <td>5 kW</td>
+            </tr>
+            <tr>
+              <td>Velocidad máxima</td>
+              <td>3000 rpm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </section>
 </body>
 
